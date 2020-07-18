@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
 	<head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 		<meta content="utf-8" http-equiv="encoding">
 		<title>file Reader</title>
 	</head>
-	<body class="lang-en" itemscope="itemscope" itemtype="https://schema.org/WebPage" style="width:300px; border-style: dotted;">
-		<div>
-			<a href="https://ssrikanth4c.github.io/">click</a>
-		</div>
-		<div>
-			<input type='file' accept="text/*,.json"/>
-		</div>
-		<div>
-			<button onClick="download()">Download</button>
-		</div>
-		<script src='./script.js'></script>
+    <body>
+        
+        <div class="mt-5 mb-5 container justify-content-around ">
+        </br>
+            <p class="h2 mt-5 mb-5 font-weight-bold">Convert JSON to a Google sheet</p>
+            <p class="h4 mt-5 mb-5"><span class="font-weight-bold">Step 1:</span> Upload json File</p>
+            <div class ="mt-5 mb-5  justify-content-center">
+                <button  type="button" class="mr-5 justify-content-between btn btn-secondary btn-lg"><input type='file' accept="text/*,.json"/></input></button>
+                <button type="button" onClick="download()" class=" justify-content-between btn btn-primary btn-lg">Submit</button>
+            </div>
+            <p class="h4 mt-5 mb-5"><span class="font-weight-bold">Step 2:</span> Wait for csv file to arrive in your Downloads</p>
+            <p class="h4 mt-5 mb-5"><span class="font-weight-bold">Step 3:</span> Navigate to blank Google SpreadSheet</p>
+            <p class="h4 mt-5 mb-5"><span class="font-weight-bold">Step 4:</span> File --> import --> Upload CSV ---> Import Data</p>
+        </div>
+        
+        
+        
+		<script src='script.js'></script>
 	</body>
 </html>

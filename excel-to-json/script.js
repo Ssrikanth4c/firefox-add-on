@@ -1,6 +1,6 @@
 const input= document.querySelector('input[type="file"]')
-let jsonData=undefined
-let str=''
+let csvData=undefined
+let jsonData=[]
 input.addEventListener('change', e=>{
     const reader= new FileReader()
     /*  A handler for the load event. 
@@ -8,37 +8,43 @@ input.addEventListener('change', e=>{
     is successfully completed.
     */
    reader.onload=()=>{
-        jsonData=JSON.parse(reader.result)
+        csvData=reader.result
+        let items= csvData.trim().split('\r\n')
+        let headers= items.shift().split(',')
+        console.log(csvData)
+        console.log(items)
+        items.map(item=>{
+            let obj={}
+            let currentItem=item.trim().split(',')
+            headers.forEach((header, ind) => {
+                obj[header]=currentItem[ind]
+            });
+            jsonData.push(obj)
+        })
+        console.log(headers)
+        jsonData=JSON.stringify(jsonData)
         console.log(jsonData)
-        let columnData=Object.keys(jsonData[0])
-        str+=columnData.join(',')+'\r\n'
-        console.log(columnData)
-        //values of objects only
-        for(let i=0; i<jsonData.length; i++){
-            str+=Object.values(jsonData[i])+'\r\n'
-        }
     }
     reader.readAsText(input.files[0])
-    // console.log(jsonData)
+    
 }, false)
 
 const download=()=>{
     let blob= new Blob(
-        [str],{type: 'text/csv;charset=utf-8;'}
+        [jsonData],{type: 'application/json'}
     );
     if (navigator.msSaveBlob) { // IE 10+
-        navigator.msSaveBlob(blob, 'csv.csv');
+        navigator.msSaveBlob(blob, 'jsonData.json');
     }else{
         let link= document.createElement('a');
         if(link.download!==undefined){
             let url= URL.createObjectURL(blob)
             link.setAttribute('href',url)
-            link.setAttribute('download','csv.csv');
+            link.setAttribute('download','jsonData.json');
             link.style.visibility='hidden';
             document.body.appendChild(link)
             link.click();
             document.body.removeChild(link)
         }
     }
-    console.log(str)
 }

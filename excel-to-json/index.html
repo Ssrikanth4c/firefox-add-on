@@ -6,19 +6,34 @@
 		<meta content="utf-8" http-equiv="encoding">
 		<title>file Reader</title>
 	</head>
-    <body style="background: -moz-linear-gradient(135deg, #2D3A62, #55375E);" class = "bg-secondary text-white">        <div class="mt-5 mb-5 container  border border-light">
-        </br>
+    <body style="background: -moz-linear-gradient(135deg, #2D3A62, #55375E);" class = "bg-secondary text-white">        
+        <div class="mt-5 mb-5 container  border border-light">
 			<div class="ml-5 pl-5">
-            <p style="color: #BDB76B" class="h2 mt-5 ml-5 font-weight-bold">Convert  Google sheet to JSON </p>
-            <p class="h4 mt-5 ml-5"><span style= "color:  #DEB887"class="font-weight-bold">Step 1:</span> Upload csv File</p>
-            <div class ="mt-5 ml-5  justify-content-center">
-                <button  type="button" style="background: -moz-linear-gradient(135deg, #2D3A62, #55375E);" class="mr-5 justify-content-between btn btn-secondary btn-lg"><input type='file' accept="text/*,.json"/></input></button>
-                <button type="button" style="background-color: #BDB76B" onClick="download()" class=" justify-content-between btn btn-light btn-lg font-weight-bold">Submit</button>
-            </div>
-            <p class="h4 mt-5 ml-5"><span style= "color:  #DEB887"class="font-weight-bold h3">Step 2:</span> Wait for csv file to arrive in your Downloads</p>
-            <p class="h4 mt-5 ml-5"><span style= "color:  #DEB887" class="font-weight-bold h3">Step 3:</span> Navigate to blank Google SpreadSheet</p>
-            <p class="h4 mt-5 ml-5 mb-5"><span style= "color:  #DEB887" class="font-weight-bold h3">Step 4:</span> File --> import --> Upload CSV ---> Import Data</p>
-		</div>
-	</div>		<script src='script.js'></script>
+                <p style="color: #BDB76B" class="h2 mt-5 ml-5 font-weight-bold">Convert  Google sheet to JSON </p>
+                <p class="h4 mt-5 ml-5"><span style= "color:  #DEB887"class="font-weight-bold">Step 1:</span> Upload csv File</p>
+                <div class ="mt-5 ml-5  justify-content-center">
+                    <button  
+                        type="button" 
+                        style="background: -moz-linear-gradient(135deg, #2D3A62, #55375E);" 
+                        class="mr-5 justify-content-between btn btn-secondary btn-lg"
+                    >
+                        <input type='file' accept="text/*,.csv"/>
+                    </button>
+                    <button 
+                        type="button" 
+                        style="background-color: #BDB76B" 
+                        onClick="download()" 
+                        class=" justify-content-between btn btn-light btn-lg font-weight-bold"
+                    >
+                        Submit
+                    </button>
+                </div>
+                <!-- instructions -->
+                <p class="h4 mt-5 ml-5"><span style= "color:  #DEB887"class="font-weight-bold h3">Step 2:</span> Wait for csv file to arrive in your Downloads</p>
+                <p class="h4 mt-5 ml-5"><span style= "color:  #DEB887" class="font-weight-bold h3">Step 3:</span> Navigate to blank Google SpreadSheet</p>
+                <p class="h4 mt-5 ml-5 mb-5"><span style= "color:  #DEB887" class="font-weight-bold h3">Step 4:</span> File --> import --> Upload CSV ---> Import Data</p>
+		    </div>
+        </div>		
+        <script src='script.js'></script>
 	</body>
 </html>

@@ -9,13 +9,20 @@ input.addEventListener('change', e=>{
     */
    reader.onload=()=>{
         csvData=reader.result
+        /*
+         split csv file into array of items
+         (first line is columns names and remaining lines are rows data)
+         */
         let items= csvData.trim().split('\r\n')
+        // first line  should be the headers and split it by comma(,)
         let headers= items.shift().split(',')
         console.log(csvData)
         console.log(items)
+        //remaining each line contains values and split it by comma (,)
         items.map(item=>{
             let obj={}
             let currentItem=item.trim().split(',')
+            //assign each value to corresponding header prop
             headers.forEach((header, ind) => {
                 obj[header]=currentItem[ind]
             });
